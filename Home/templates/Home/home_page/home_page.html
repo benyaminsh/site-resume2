@@ -168,11 +168,11 @@
                           {% for project in projects %}
                           <div>
                               <div class="project-item">
-                                <a href="{{ project.link }}" data-lightbox="image-1"><img src="{{ project.photo.url }}" alt="{{ project.title }}"></a>
+                                <a href="{{ project.link }}" target='_blank' ><img style='border-radius: 20%;' src="{{ project.photo.url }}" alt="{{ project.title }}"></a>
                                 <div class="text-content">
                                   <h4>{{ project.title }}</h4>
                                   <div class="primary-button">
-                                    <a href="{{ project.link }}">Show Project</a>
+                                    <a href="{{ project.link }}" target='_blank'>Show Project</a>
                                   </div>
                                 </div>
                               </div>
@@ -233,13 +233,13 @@
                         <div class="col-md-4">
                           <div class="more-info">
                               {% if settings.email %}
-                                <p>Email : benyamin@gmail.com</p>
+                                <p>Email : {{ settings.email }}</p>
                               {% endif %}
                               {% if settings.phone %}
-                                <p>Phone : 09981485223</p>
+                                <p>Phone : {{ settings.phone }}</p>
                               {% endif %}
                               {% if settings.instagram %}
-                                <p>Instagram : 09981485223</p>
+                                <p>Instagram : {{ settings.instagram }}</p>
                               {% endif %}
                           </div>
                         </div>
@@ -256,7 +256,7 @@
             </div>
           </article>
         </section>
-      
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"><\/script>')</script>
